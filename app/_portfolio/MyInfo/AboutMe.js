@@ -1,20 +1,18 @@
+"use client"
 import React, { useEffect, useContext } from 'react'
-import {Screen, WebGLRenderbuffer} from 'three'
-import { Canvas } from "@react-three/fiber";
-import * as THREE from "three"
-// import jsIcon from '@/public/shape.svg'
+
 
 import Image from 'next/image';
 import heroIcon from '@/public/hero-icon.svg';
 
-import { PortfolioContext } from '@/app/Context/context';
+import { PortfolioContext } from '@/Context/context';
 import Link from 'next/link';
 
 const Skills = () => {
   const {icons, tools } = useContext(PortfolioContext)
 
   return (
-    <section id="works" className='text-white  w-full    lg:h-[22rem]  flex flex-wrap flex-row items-start justify-evenly gap-8  '>
+    <section id="works" className='text-white  w-full      flex flex-wrap flex-row items-start justify-evenly gap-8   '>
             
             
             

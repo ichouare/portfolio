@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 const CompletProject = ({listofproject, title}) => {
   return (
-    <section id="works" className='text-white   w-full   flex flex-wrap flex-row lg:items-start  md:items-center justify-evenly   gap-8  '>
+    <section id="works" className='text-white   w-full   flex  flex-wrap md:flex-row items-center lg:items-start  justify-evenly   gap-8  p-8 md:p-0 '>
       <div className='w-full  flex  items-center justify-between gap-x-8   '>
         <div className='flex items-center gap-x-2 flex-1 p-0 '>
           <h2 className='text-white text-[32px]  font-medium  tracking-wide '>
@@ -13,7 +13,7 @@ const CompletProject = ({listofproject, title}) => {
          
         </div>
       </div>
-      <div className='w-full  flex  flex-row  items-center  justify-start flex-wrap gap-4 cursor-pointer     '>
+      <div className='w-full  flex  flex-row  items-center  justify-center  md:justify-start flex-wrap gap-4 cursor-pointer     '>
 
       {
         listofproject.map((project, index) => {

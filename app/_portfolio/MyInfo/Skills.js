@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useContext } from 'react'
 import {Screen, WebGLRenderbuffer} from 'three'
 import { Canvas } from "@react-three/fiber";
@@ -7,7 +8,7 @@ import * as THREE from "three"
 import Image from 'next/image';
 import heroIcon from '@/public/hero-icon.svg';
 
-import { PortfolioContext } from '@/app/Context/context';
+import { PortfolioContext } from '@/Context/context';
 
 const Skills = () => {
   const {icons, tools } = useContext(PortfolioContext)
@@ -60,7 +61,7 @@ const Skills = () => {
                 <span className='block w-[3px] h-[3px] rounded-full bg-gray'></span>
                 <span className='block w-[3px] h-[3px] rounded-full bg-gray'></span>
               </div>
-              <Image src={heroIcon} alt="hero icon"  className='absolute w-[100px] h-[100px] '/>
+              <Image src={heroIcon}  alt="hero icon"  className='absolute w-[100px] h-[100px] '/>
               <div className='absolute  w-[84px] h-[84px] flex items-center justify-between gap-6 flex-wrap bottom-10 left-0 '>
                 <span className='block w-[3px] h-[3px] rounded-full bg-gray'></span>
                 <span className='block w-[3px] h-[3px] rounded-full bg-gray'></span>

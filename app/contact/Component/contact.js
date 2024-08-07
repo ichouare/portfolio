@@ -7,17 +7,17 @@ import Image from 'next/image';
 import heroIcon from '@/public/hero-icon.svg';
 
 
-import { PortfolioContext } from '@/app/Context/context';
+import { PortfolioContext } from '@/Context/context';
 import Link from 'next/link';
 
 const Skills = () => {
   const {contact } = useContext(PortfolioContext)
   return (
-    <section id="works" className='text-white  w-full   flex flex-wrap flex-row items-start justify-evenly gap-4 py-16  '>
+    <section id="works" className='text-white  w-full   flex flex-wrap flex-row items-start justify-evenly gap-4 md:py-16   '>
             
             
             
-            <div className='w-full  flex  items-center justify-between gap-x-14   '>
+            <div className='w-full  flex  items-center justify-between gap-x-14  '>
                 
         <div className='flex flex-col items-start gap-x-2 flex-1 p-0 '>
           <h2 className='text-white text-[32px]  font-medium  tracking-wide '>
@@ -27,7 +27,7 @@ const Skills = () => {
         <h6> who am i ?</h6>
         </div>
       </div>
-        <div className='w-full h-full flex  flex-row  items-center justify-start gap-x-4 cursor-pointer    '>
+        <div className='w-full h-full flex flex-col   md:flex-row  items-center justify-start gap-x-4 cursor-pointer    '>
         <div className='md:w-full lg:w-[60%] h-[200px] flex flex-col items-start   ' >
                <article className='self-start w-[80%] text-gray h-full  flex flex-col items-start justify-start  '>
                 <p className='text-base leading-8'>
@@ -35,7 +35,7 @@ const Skills = () => {
             </p>
                </article>
               </div>
-            <div className='w-[30%] h-full border border-gray flex flex-col items-start gap-3 p-2 '>
+            <div className='w-full md:w-fit   h-full border border-gray flex flex-col items-start gap-3 p-2 '>
                     <h1 className='capitalize text-white text-xl'>message me here</h1>
                     <div className='flex flex-col gap-4'>
                         {

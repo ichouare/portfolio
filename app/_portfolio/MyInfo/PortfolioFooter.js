@@ -1,12 +1,13 @@
+"use client"
 import { useContext } from "react";
 import  Union from '@/public/Style=Default.svg'
 import Image from 'next/image';
-import github from '@/public/Github.svg'
+import github from '@/public/github.svg';
 import linkedin from '@/public/Linkedin.svg';
 import Discord from '@/public/Discord.svg';
 import Link from "next/link";
 
-import {PortfolioContext} from '@/app/Context/context.js'
+import {PortfolioContext} from '@/Context/context.js'
 
 
 const PortfolioFooter = () => {
@@ -18,7 +19,7 @@ const PortfolioFooter = () => {
        <div className='lg:w-[64rem] md:w-full flex flex-wrap  justify-between items-center  gap-y-4   '>
             <div className='w-[380px]  flex flex-col  grow-0 items-start    gap-y-4'>
               <div className='flex items-center gap-x-4'>
-              <Image src={Union} alt='union-logo' className=' w-[16px] aspect-square'/>
+              <Image src={Union}   alt='union-logo' className=' w-[16px] aspect-square'/>
               <span className='capitalize font-bold tracking-wide text-gray'>
               ichouare
               </span>
@@ -35,7 +36,7 @@ const PortfolioFooter = () => {
                 layoutIcons.map((item , _) => {
                   return(
                     <Link href='' target='_blank' rel='noopener noreferrer' className='w-[50px] h-[50px]' key={_}>
-                      <Image src={item} alt="icon"  className=" text-white object-fill"/>
+                      <Image src={item}  alt="icon"  className=" text-white object-fill"/>
                     </Link>
                   )
                 })

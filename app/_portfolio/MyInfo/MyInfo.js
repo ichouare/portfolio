@@ -1,36 +1,35 @@
 "use client"
-import { useRef, useState,useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import React, {useContext} from 'react'
-import { CiShare1 } from "react-icons/ci";
-import { FaDownload } from "react-icons/fa6";
-import profil from '@/public/profil.webp';
-import { useRouter } from 'next/navigation'
 import { gsap } from "gsap";
-// import { Flip } from "gsap/Flip";
-// gsap.registerPlugin(Flip);
-import animate from '@/animation/animate'
-import Skills from './Works';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+
 
 
 import heroImg from '@/public/Image.png';
 import heroIcon from '@/public/hero-icon.svg';
 const MyInfo = () => {
-
+  const banner = useRef(null)
 
  
 
+  gsap.registerPlugin(ScrollTrigger)
   useEffect(() => {
-    // animate()
-    // // gsap.to(ref.current,  {
-    // //     xPercent: 100,
-    // //     duration: 0.8,
-    // //   })
-
-  })
+    gsap.to(banner.current, {
+      scrollTrigger: {
+        trigger: banner.current,
+      },
+      y: 0,
+      opacity: 1,
+      ease: "power3",
+      duration: 2,
+    });
+  }, []);
     
         return (
-          <section  id="hero"  className='text-white  w-full px-8   h-auto md:h-[35rem] lg:h-[27rem]  flex flex-col  flex-wrap md:flex-row items-center justify-between gap-y-8 '>
+          <section  ref={banner} id="hero"  className='text-white  w-full px-8   h-auto md:h-[35rem] lg:h-[27rem]  flex flex-col  flex-wrap md:flex-row items-center justify-between gap-y-8 translate-y-14  opacity-0 '>
             <div className='md:w-[50%] w-full h-[100%] flex   flex-col text-Fira   items-start pt-20 gap-y-4 '>
               <h1 className='text-[2rem] font-semibold first-letter:uppercase leading-10' >
               issam i'm 
@@ -47,8 +46,8 @@ const MyInfo = () => {
 
             </div>
             <div className='md:w-[50%] w-full  relative flex flex-col items-center justify-start  p-0 '>
-              <Image src={heroIcon} alt="hero icon"  className='absolute w-[155px] h-[155px] left-10 top-24'/>
-              <Image src={heroImg} alt="hero image"  className='object-cover z-10'/>
+              <Image src={heroIcon}    alt="hero icon"  className='absolute w-[155px] h-[155px] left-10 top-24'/>
+              <Image src={heroImg}     alt="hero image"  className='object-cover z-10'/>
               <p className='w-fit p-2 md:w-[78%] text-base  text-gray flex items-center border border-gray  me-4'>
                 <span className='block w-[16px] h-[16px] bg-primary me-2'></span>
                 currently i working to build <span className='capitalize ms-2 text-white inline'> redis</span>  

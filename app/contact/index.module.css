@@ -1,0 +1,12 @@
+/* .message::after{
+    content: '';
+   width: 50px;
+   height: 100px;
+   background-color: red;
+   display: block;
+   position: absolute;
+   bottom:  -50px;
+   right: -40px;
+   transform: rotate(-60deg);
+
+} */

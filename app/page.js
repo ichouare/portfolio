@@ -1,14 +1,12 @@
-"use client"
-import { useContext } from "react";
-import Image from "next/image";
-import {ProtfolioContext} from '@/app/Context/context'
 import MyInfo from "./_portfolio/MyInfo/MyInfo";
 import Myprinciple from "./_portfolio/MyInfo/Myprinciple";
 import Works from "./_portfolio/MyInfo/Works";
 import Skills from "./_portfolio/MyInfo/Skills";
 import AboutMe from "./_portfolio/MyInfo/AboutMe";
 import Contacts from "./_portfolio/MyInfo/Contacts";
-import Projects from "./works/page";
+
+
+
 
 
 

@@ -18,7 +18,7 @@ import githubIcon from '@/public/github.svg';
 
 // import icons layout 
 import line from '@/public/line.png';
-import github from '@/public/Github.svg'
+// import github from '@/public/Github.svg'
 import linkedin from '@/public/Linkedin.svg';
 import Discord from '@/public/Discord.svg';
 import Email from '@/public/Vector.svg';
@@ -36,7 +36,7 @@ const ContextProvide = ({children}) => {
 const [sendMeMessage, setSendMeMessage] = useState(false)
 const icons = [JsIcon, cssIcon, dockerIcon, Cicon, Cppicon, htmlIcon , tailwindIcon, nginxIcon, reactIcon, nextIcon ]
 const tools = [vsIcon, gitIcon, githubIcon, line]
-const layoutIcons = [github, linkedin, Discord, Email,]
+const layoutIcons = [githubIcon, linkedin, Discord, Email,]
 const contact = [
   {
   'title': 'issam.ichouaref1998@gmail.com',

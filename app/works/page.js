@@ -37,8 +37,8 @@ const Projects = () => {
 
   })
   return (
-    <section className="   flex  flex-1 min-h-screen  h-auto lg:w-[64rem] w-full  flex-col items-center justify-start    relative gap-16 p-16 ">
-                <div className='w-full flex flex-col items-start gap-x-2  p-0 '>
+    <section className="   flex  flex-1 md:min-h-screen  h-auto lg:w-[64rem] w-full  flex-col items-center justify-start    relative md:gap-16 md:p-0 ">
+                <div className='w-full flex flex-col items-start gap-x-2 px-8  md:p-0 '>
                   <h2 className='text-white text-[32px]  font-medium  tracking-wide '>
                     <span className='text-primary inline'>/</span>
                    contact

@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -23,13 +24,13 @@ const CompletProject = ({listofproject, title}) => {
           return (<article className='w-[330px]  flex  flex-col  items-center gap-0 cursor-pointer  shadow    border  border-gray     ' key={_}>
          
             <div className='w-full h-[200px] p-0'>
-              <Image src={image} alt={title}  width={200} height={200} className='w-full h-full object-fill'  />
+              <Image src={image}  alt={title}  width={200} height={200} className='w-full h-full object-fill'  />
             </div>
             <div className='border border-gray w-full p-2 '>
               {
-                skills.map(skill => {
+                skills.map((skill, _) => {
                 return(
-                  <span className=' capitalize text-gray'>{skill}</span>
+                  <span  key={_} className=' capitalize text-gray'>{skill}</span>
                 )
                 })
               }

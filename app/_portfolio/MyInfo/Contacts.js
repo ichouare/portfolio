@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useContext } from 'react'
 
 // import jsIcon from '@/public/shape.svg'
@@ -6,7 +7,7 @@ import Image from 'next/image';
 import heroIcon from '@/public/hero-icon.svg';
 
 
-import { PortfolioContext } from '@/app/Context/context';
+import { PortfolioContext } from '@/Context/context';
 import Link from 'next/link';
 
 const Skills = () => {
@@ -34,7 +35,7 @@ const Skills = () => {
             </p>
                </article>
               </div>
-            <div className=' lg:w-[30%] h-full border border-gray flex flex-col items-start gap-3 p-2 '>
+            <div className=' lg:w-fit h-full border border-gray flex flex-col items-start gap-3 p-2 '>
                     <h1 className='capitalize text-white text-xl'>message me here</h1>
                     <div className='flex flex-col gap-4'>
                         {

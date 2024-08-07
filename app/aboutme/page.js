@@ -17,7 +17,7 @@ import Facts from "./_components/Facts";
 export default function Home() {
 
   return (
-    <section className="   flex  flex-1 min-h-screen  h-auto lg:w-[64rem] md:w-full  flex-col items-center justify-between gap-20   relative">
+    <section className="   flex  flex-1 min-h-screen  h-auto lg:w-[64rem] md:w-full  flex-col items-center justify-between gap-4 md:gap-20   relative">
 
       <AboutMe />
       <Skills />
