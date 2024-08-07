@@ -21,6 +21,7 @@ const Navbar = () => {
     const {tools, layoutIcons} = useContext(PortfolioContext)
     const [open , setOpen] = useState(false)
     const menu = useRef(null)
+    const item = useRef(null)
     const links = [ {title : "home", link: "/"},{title : "works", link:  "works"},{title : "about-me", link:  "aboutme"}, {title: "contact", link: "contact"}]
 
     // useEffect(() =>{
@@ -29,21 +30,35 @@ const Navbar = () => {
 
     const handleclick = ()  => {
       setOpen(true);
-      gsap.to(menu.current, {
+      let tl = gsap.timeline();
+      tl.to(menu.current, {
+        width: "150px",
+        height: "150px",
+        borderRadius : "100%",
+        background : " red",
+        duration : 0.5,
+      })
+      tl.to(menu.current, {
+        borderRadius : "0%",
         opacity:1,
         position: "absolute",
         top: "50px",
-        borderRadius: 0,
+        // borderRadius: 0,
         width: "100%",
         height: "100vh",
-        bottom:0,
-        // overflow: "hidden",
-        duration:1
-     })
+        // background: "red",
+        left: "0%",
+        ease : "power4",
+
+        
+        duration:0.5   })
+        tl.to(item.current, {
+          opacity:0.8,
+        })
     }
   return (
     <header className = "w-full md:w-[1024px]  md:p-0 h-[61px]  text-gray  md:fixed top-0 z-30 ">
-      <div className='hidden  md:flex md:fixed md:top-0 md:left-8  md:flex-col md:items-center  '>
+      <div className='hidden   md:flex md:fixed md:top-0 md:left-8  md:flex-col md:items-center  '>
         <Image src={line} alt="line" className = "" />
         <div className=' w-[2rem] h-[7rem] flex flex-col items-center gap-1 ' > 
            {
@@ -57,7 +72,7 @@ const Navbar = () => {
            }
         </div>
       </div>
-    <nav className="w-full h-full flex flex-row px-6 md:px-0 justify-between items-center  cursor-pointer   " >
+    <nav className="w-full  h-full flex flex-row px-6 md:px-0 justify-between items-center  cursor-pointer   " >
       
     <div className='logo flex items-center text_white   aspect-square w-[72px] h-[21px]  gap-x-2'>
         <Image src={Union} alt='union-logo' className=' w-[16px] aspect-square'/>
@@ -78,13 +93,13 @@ const Navbar = () => {
       en<span className='rotate-45'></span>
     </button>
     </ul>
-    <div className='absolute md:hidden top-0 p-[20px]  bg-black end-0 w-[50px] h-[50px] overflow-hidden rounded-full -z-10 opacity-0 ' ref={menu}>
+    <div className='absolute md:hidden  p-[20px] top-[10%] left-[50%]  bg-black  w-[20px] h-[20px] overflow-hidden rounded-full -z-10 opacity-0 ' ref={menu}>
 
-    <ul className='relative flex flex-col items-start justify-between gap-8 ' >
+    <ul className='relative flex flex-col items-start justify-between gap-8  opacity-0' ref={item} >
     {
       links.map(( item, _ )=> {
         const {title, link} = item
-        return (<li key={_}>
+        return (<li key={_} >
               <Link className='text-[32px]'  href={link}><span className='text-primary me-[2px]'>#</span>{title}</Link>
           </li>)
         })

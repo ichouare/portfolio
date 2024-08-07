@@ -32,9 +32,9 @@ const PortfolioFooter = () => {
               <h6 className='text-white capitalize text-xl font-medium '>media</h6>
               <div className='flex items-center gap-x-4 '>
               {
-                layoutIcons.map(item => {
+                layoutIcons.map((item , _) => {
                   return(
-                    <Link href='' target='_blank' rel='noopener noreferrer' className='w-[50px] h-[50px]'>
+                    <Link href='' target='_blank' rel='noopener noreferrer' className='w-[50px] h-[50px]' key={_}>
                       <Image src={item} alt="icon"  className=" text-white object-fill"/>
                     </Link>
                   )

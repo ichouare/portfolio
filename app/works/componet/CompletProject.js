@@ -16,18 +16,18 @@ const CompletProject = ({listofproject, title}) => {
       <div className='w-full  flex  flex-row  items-center  justify-start flex-wrap gap-4 cursor-pointer     '>
 
       {
-        listofproject.map((project, _) => {
+        listofproject.map((project, index) => {
           const {title, description, image, skills} = project
-          return (<article className='w-[330px]  flex  flex-col  items-center gap-0 cursor-pointer     border  border-gray     ' key={_}>
+          return (<article className='w-[330px]  flex  flex-col  items-center gap-0 cursor-pointer     border  border-gray ' key={index}>
          
             <div className='w-full h-[200px] p-0'>
               <Image src={image} alt={title}  width={200} height={200} className='w-full h-full object-fill'  />
             </div>
             <div className='border border-gray w-full p-2 '>
               {
-                skills.map(skill => {
+                skills.map((skill, index) => {
                 return(
-                  <span className=' capitalize text-gray'>{skill}</span>
+                  <span key={index} className=' capitalize text-gray'>{skill}</span>
                 )
                 })
               }

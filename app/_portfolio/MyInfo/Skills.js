@@ -80,7 +80,7 @@ const Skills = () => {
                 <span className='block w-[3px] h-[3px] rounded-full bg-gray'></span>
               </div>
             </div>
-              <div className='md:w-full md:w-[60%] min-h-[200px]   relative  grid  grid-rows-2 grid-cols-2 place-content-center  gap-4 p-6 md:p-10 pe-0' >
+              <div className='w-full md:w-[60%] min-h-[200px]   relative  grid  grid-rows-2 grid-cols-2 place-content-center  gap-4 p-6 md:p-10 pe-0' >
                 {
                     skills.map((skill, index) => {
                          const {type, element} = skill
