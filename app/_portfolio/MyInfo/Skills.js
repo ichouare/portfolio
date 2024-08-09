@@ -1,9 +1,7 @@
 "use client"
-import React, { useEffect, useContext } from 'react'
-import {Screen, WebGLRenderbuffer} from 'three'
-import { Canvas } from "@react-three/fiber";
-import * as THREE from "three"
-// import jsIcon from '@/public/shape.svg'
+import React, { useEffect, useContext , useRef} from 'react'
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Image from 'next/image';
 import heroIcon from '@/public/hero-icon.svg';
@@ -12,6 +10,22 @@ import { PortfolioContext } from '@/Context/context';
 
 const Skills = () => {
   const {icons, tools } = useContext(PortfolioContext)
+  const skill = useRef(null)
+
+ 
+
+  gsap.registerPlugin(ScrollTrigger)
+  useEffect(() => {
+    gsap.to(skill.current, {
+      scrollTrigger: {
+        trigger: skill.current,
+      },
+      y: 0,
+      opacity: 1,
+      ease: "power3",
+      duration: 2,
+    });
+  }, []);
   const skills = [
     {
         'type': 'languages',
@@ -31,7 +45,7 @@ const Skills = () => {
     },
   ]
   return (
-    <section id="works" className='text-white  w-full    md:h-[22rem]  flex flex-wrap flex-row items-start justify-evenly gap-8  '>
+    <section id="works" className='text-white  w-full    md:h-[22rem]  flex flex-wrap flex-row items-start justify-evenly gap-8   translate-y-14  opacity-0 ' ref={skill}>
             <div className='w-full  flex   items-center justify-between px-4 md:px-0 md:gap-x-14   '>
         <div className='flex items-center gap-x-2 flex-1 p-0 md:px-2 '>
           <h2 className='text-white text-[32px]  font-medium  tracking-wide '>

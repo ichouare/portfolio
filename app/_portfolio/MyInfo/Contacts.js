@@ -1,10 +1,11 @@
 "use client"
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useRef } from 'react'
 
 // import jsIcon from '@/public/shape.svg'
 
 import Image from 'next/image';
-import heroIcon from '@/public/hero-icon.svg';
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
 import { PortfolioContext } from '@/Context/context';
@@ -12,8 +13,24 @@ import Link from 'next/link';
 
 const Skills = () => {
   const {contact } = useContext(PortfolioContext)
+  const banner = useRef(null)
+
+ 
+
+  gsap.registerPlugin(ScrollTrigger)
+  useEffect(() => {
+    gsap.to(banner.current, {
+      scrollTrigger: {
+        trigger: banner.current,
+      },
+      y: 0,
+      opacity: 1,
+      ease: "power3",
+      duration: 2,
+    });
+  }, []);
   return (
-    <section id="works" className='text-white  w-full   flex flex-wrap flex-row items-start justify-evenly gap-8  relative '>
+    <section  ref={banner} id="works" className='text-white  w-full   flex flex-wrap flex-row items-start justify-evenly gap-8  relative  translate-y-14  opacity-0'>
             
             
             

@@ -1,10 +1,28 @@
+"use client"
+import { useRef, useEffect } from'react';
 
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 const CompletProject = ({listofproject, title}) => {
+  const work = useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
+  useEffect(() => {
+    gsap.to(work.current, {
+      scrollTrigger: {
+        trigger: work.current,
+      },
+      y: 0,
+      opacity: 1,
+      ease: "power3",
+      duration: 2,
+    });
+  }, []);
   return (
-    <section id="works" className='text-white   w-full   flex flex-wrap flex-row items-start justify-evenly   gap-8  '>
+    <section id="works" className='text-white   w-full   flex flex-wrap flex-row items-start justify-evenly   gap-8  translate-y-14  opacity-0 ' ref={work}>
        <div className='w-full  flex  items-center justify-between px-4 lg:px-0 lg:gap-x-14   '>
         <div className='flex items-center gap-x-2 flex-1 p-0 '>
           <h2 className='text-white text-[32px]  font-medium  tracking-wide '>

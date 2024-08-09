@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext , useRef} from 'react'
 
 
 import Image from 'next/image';
@@ -7,12 +7,30 @@ import heroIcon from '@/public/hero-icon.svg';
 
 import { PortfolioContext } from '@/Context/context';
 import Link from 'next/link';
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Skills = () => {
   const {icons, tools } = useContext(PortfolioContext)
+  const banner = useRef(null)
+
+ 
+
+  gsap.registerPlugin(ScrollTrigger)
+  useEffect(() => {
+    gsap.to(banner.current, {
+      scrollTrigger: {
+        trigger: banner.current,
+      },
+      y: 0,
+      opacity: 1,
+      ease: "power3",
+      duration: 2,
+    });
+  }, []);
 
   return (
-    <section id="works" className='text-white  w-full      flex flex-wrap flex-row items-start justify-evenly gap-8   '>
+    <section ref={banner} id="works" className='text-white  w-full      flex flex-wrap flex-row items-start justify-evenly gap-8  translate-y-14  opacity-0  '>
             
             
             
